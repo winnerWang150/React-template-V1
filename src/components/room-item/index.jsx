@@ -28,7 +28,7 @@ const RoomItem = memo((props) => {
         </div>
       </div>
       <Carousel ref={carouselRef}  dots={false}>
-        {roomItemData.picture_urls?.map(url => <div className='cover'><img src={url} alt="" /></div>)}
+        {roomItemData.picture_urls?.map(url => <div className='cover' key={url}><img src={url} alt="" /></div>)}
       </Carousel>
       <div className='indicator'>
         <Indicator currentIndex={currentIndex}>

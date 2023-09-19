@@ -83,7 +83,7 @@ const PictureBrowSer = memo((props) => {
           </div>
           <div className='indicator'>
             <Indicator currentIndex={currentIndex}>
-              {picture_urls.map((item, index) => <div className='dot' onClick={() => indicatorClickHandler(index)}>
+              {picture_urls.map((item, index) => <div className='dot' key={index} onClick={() => indicatorClickHandler(index)}>
                 <img src={item} className={classNames('item', {isActive: currentIndex === index})} alt="" />
               </div> )}
             </Indicator>

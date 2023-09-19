@@ -28,7 +28,7 @@ const Home = memo(() => {
   }, shallowEqual)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchHighScoreInfoAction())
+    dispatch(fetchHighScoreInfoAction('xx'))
     dispatch(fetchGoodPriceAction())
     dispatch(fetchHomeDiscountAction()) 
     dispatch(fetchHomeHotRecommendDestAction())

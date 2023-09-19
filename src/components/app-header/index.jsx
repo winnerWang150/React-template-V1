@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { shallowEqual, useSelector } from 'react-redux'
 
 import {ContextExtendWrapper, HeaderWrapper} from './style'
 import Left from './c-cpns/header-left'
@@ -16,7 +16,7 @@ const Header = memo(() => {
 
   const {headerConfig} = useSelector((state) => ({
     headerConfig: state.main.headerConfig
-  }))
+  }), shallowEqual)
   const {isFixed, isAlpha} = headerConfig
   
   // get ScrollX and ScrollY
@@ -40,14 +40,14 @@ const Header = memo(() => {
 
   return (
     <ThemeProvider theme={{isHeaderAlpha}}>
-      <HeaderWrapper isFixed={isFixed} className={classNames({fixed: isFixed})} >
+      <HeaderWrapper  className={classNames({fixed: isFixed})} >
         <div className='top'>
           <div className='context'>
             <Left/>
             <Middle isShowCover={isShowCover || isHeaderAlpha} isShowCoverHandler={() => isShowCoverHandler()}/>
             <Right/>
           </div>
-          <ContextExtendWrapper isShowCoverHandler={isShowCover || isHeaderAlpha}></ContextExtendWrapper>
+          <ContextExtendWrapper isshowcover={isShowCover || isHeaderAlpha}></ContextExtendWrapper>
         </div>
         {isShowCover && <div className='cover' onClick={() => coverClickHandler()}></div>}
       </HeaderWrapper>

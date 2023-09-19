@@ -46,6 +46,6 @@ export const HeaderWrapper = styled.div`
 `
 
 export const ContextExtendWrapper = styled.div`
-  height: ${props => props.isShowCoverHandler ? '100px' : '0px' };
+  height: ${props => props.isshowcover ? '100px' : '0px' };
   transition: all 0.2s ease;
 ` 
