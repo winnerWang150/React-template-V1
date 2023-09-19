@@ -48,7 +48,7 @@ const Home = memo(() => {
     <HomeWrapper>
       <BannerWrapper/>
       <div className='content'>
-
+ 
         {/* discount */}
         {isEmptyObject(discountInfo) && <SectionHomeV2 inforData={discountInfo} itemWidth='33.33%'/>}
 
